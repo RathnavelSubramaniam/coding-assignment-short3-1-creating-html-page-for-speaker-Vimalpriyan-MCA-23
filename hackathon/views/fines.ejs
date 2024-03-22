@@ -1,0 +1,35 @@
+<style>
+  body {
+    background-color: #4b9512; /* Change this color code to the desired background color */
+  }
+</style>
+
+<h1 style="color: red;">All Students payment</h1>
+<% if (fines.length > 0) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Registration Number</th>
+        <th>Email</th>
+        <th>Course</th>
+        <th>Fine Name</th>
+        <th>Fine Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% fines.forEach(function(fine) { %>
+        <tr>
+          <td><%= fine.studentname %></td>
+          <td><%= fine.regno %></td>
+          <td><%= fine.email %></td>
+          <td><%= fine.course %></td>
+          <td><%= fine.fineName %></td> <!-- Assuming fineName is the name of the fine -->
+          <td><%= fine.amount %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <p>No fines found.</p>
+<% } %>
